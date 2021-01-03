@@ -1,11 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <link rel="stylesheet" href="/assets/fonts/iconfont.css" />
+
+  </head>
+
+  <body>
+    <!-- logo -->
+    <div class="logo layui-main">
+      <img src="/assets/images/logo.png" alt="" />
+    </div>
+    <!-- 登录框 -->
+    <div class="login">
+      <div class="login-top">
+        <img src="/assets/images/login_title.png" alt="" />
+      </div>
+      <div class="login-psw">
+        <!-- 用户名 -->
+        <form class="layui-form" id="layui-1">
+          <div class="layui-form-item">
+            <i class="layui-icon">&#xe676;</i>
+            <input
+              type="text"
+              name="username"
+              lay-verify="required"
+              autocomplete="off"
+              placeholder="请输入用户名"
+              class="layui-input"
+            />
+          </div>
+          <!-- 密码 -->
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <i class="layui-icon">&#xe673;</i>
+              <input
+                type="password"
+                name="password"
+                placeholder="请输入密码"
+                lay-verify="required|pwd"
+                autocomplete="off"
+                class="layui-input"
+              />
+            </div>
+          </div>
+          <!-- 登录 -->
+          <button
+           
+            class="layui-btn layui-btn-radius layui-btn-normal"
+            lay-submit
+          >
+            登录</button
+          ><br />
+          <!-- 注册账号 -->
+          <div class="zc">
+            <a href="javascript:;">去注册账号</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 注册页面 -->
+    <div class="login login1 ">
+      <div class="login-top">
+        <img src="/assets/images/login_title.png" alt="" />
+      </div>
+      <div class="login-psw reg-box">
+        <!-- 用户名 -->
+        <form class="layui-form" id="layui-2">
+          <div class="layui-form-item">
+            <i class="layui-icon">&#xe676;</i>
+            <input
+              type="text"
+              name="username"
+              lay-verify="required"
+              autocomplete="off"
+              placeholder="请输入用户名"
+              class="layui-input"
+            />
+          </div>
+          <!-- 密码 -->
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <i class="layui-icon">&#xe673;</i>
+              <input
+                type="password"
+                name="password"
+                lay-verify="required|pwd"
+                placeholder="请输入密码"
+                autocomplete="off"
+                class="layui-input"
+              />
+            </div>
+          </div>
+          <!-- 再次确认 -->
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <i class="layui-icon">&#xe673;</i>
+              <input
+                type="password"
+                name="repassword"
+                placeholder="请再次确认密码"
+                autocomplete="off"
+                lay-verify="required|pwd|repwd"
+                class="layui-input"
+              />
+            </div>
+          </div>
+          <!-- 登录 -->
+          <button
+           
+            class="layui-btn layui-btn-radius layui-btn-normal"
+            lay-submit
+          >
+            确认</button
+          ><br />
+          <!-- 注册账号 -->
+          <div class="zc1">
+            <a href="javascript:;" id="link_login">去登录</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/login.js"></script>
+    <script>
+      var zhuce = document.querySelector(".zc a");
+      var zhuce1 = document.querySelector(".zc1 a");
+      var login = document.querySelector(".login");
+      var login1 = document.querySelector(".login1");
+      zhuce.onclick = function () {
+        login.style.display = "none";
+        login1.style.display = "block";
+      };
+      zhuce1.onclick = function () {
+        login1.style.display = "none";
+        login.style.display = "block";
+      };
+    </script>
+  </body>
 </html>
