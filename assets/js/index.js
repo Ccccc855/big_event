@@ -42,6 +42,6 @@ function fnn(uname) {
     } else {
         $('.layui-nav-img').hide()
         var a = nm[0].toUpperCase()
-        $('.text-avatar').html(a).show()
+        $('.text-tx').html(a).show()
     }
 }
